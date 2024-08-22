@@ -2,7 +2,7 @@ public class Participante{
 
     String nombre ;
     double fuerza ;
-    int energia,constanteJVCD = 6 ,valorDeterminado = 100;
+    int energia,constanteJVCD = 4 ,valorDeterminado = 500;
 
     public void detalle(){
 
@@ -11,14 +11,32 @@ public class Participante{
         System.out.println("Energia: " + energia);
     }
     //
+
+    public boolean tieneFuerza(){
+        if (valorDeterminado < (fuerza*constanteJVCD)) {
+            return true;
+        }
+        else return false;
+
+    }
+
+    public boolean tieneEnergia(){
+        if (energia > 15) {
+            return true;
+        }
+        else return false;
+
+    }
+
     public boolean esChuckNorris(){
-        if ((valorDeterminado > fuerza*constanteJVCD) && (energia > 15)) {
+        if (tieneFuerza() && tieneEnergia()) {
             return true;
         }
         else return false;
     }
 
     public boolean esInsecto(){
+
         return fuerza < 500;
     }
 
