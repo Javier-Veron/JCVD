@@ -86,8 +86,13 @@ class ParticipanteTest {
     //TEST DORMIR
 
     @org.junit.jupiter.api.Test
-    void entrenar() {
-
+    void dormir() {
+        int energiaOld;
+        Participante unP = new Participante();
+        unP.energia = 0;
+        energiaOld = unP.energia;
+        unP.dormir();
+        assertEquals(20,unP.energia-energiaOld);
     }
 
 }
