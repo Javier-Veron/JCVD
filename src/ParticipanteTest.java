@@ -73,14 +73,49 @@ class ParticipanteTest {
     //TEST ES INSECTO
 
     @org.junit.jupiter.api.Test
-    void esInsecto() {
+    void esInsectoTrue() {
+        Participante unP = new Participante();
+        unP.fuerza = 501;
+        assertTrue(unP.fuerza>500);
     }
+
+    @org.junit.jupiter.api.Test
+    void esInsectoFalse() {
+        Participante unP = new Participante();
+        unP.fuerza = 500;
+        assertFalse(unP.fuerza>500);
+    }
+
 
     //TEST ENTRENAR
 
     @org.junit.jupiter.api.Test
-    void entrenar() {
+    void entrenarTrue() {
+        int horas,energiaOld;
+        double fuerzaOld;
+        horas = 1;
+        Participante unP = new Participante();
+        unP.fuerza = 500;
+        unP.energia = 20;
+        fuerzaOld = unP.fuerza;
+        energiaOld = unP.energia;
+        unP.entrenar(horas);
+        assertTrue((unP.fuerza > fuerzaOld) && (unP.energia < energiaOld));
 
+    }
+
+    @org.junit.jupiter.api.Test
+    void entrenarFalse() {
+        int horas,energiaOld;
+        double fuerzaOld;
+        horas = 0;
+        Participante unP = new Participante();
+        unP.fuerza = 500;
+        unP.energia = 20;
+        fuerzaOld = unP.fuerza;
+        energiaOld = unP.energia;
+        unP.entrenar(horas);
+        assertFalse((unP.fuerza > fuerzaOld) && (unP.energia < energiaOld));
     }
 
     //TEST DORMIR
