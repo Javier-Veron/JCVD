@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/JVCD.iml" filepath="$PROJECT_DIR$/JVCD.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JCVD.iml" filepath="$PROJECT_DIR$/JCVD.iml" />
     </modules>
   </component>
 </project>
